@@ -1,0 +1,152 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODPLEX Dashboard</title>
+    <style>
+        /* General Styles */
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            display: flex;
+            background-color: #eaf7ea;
+        }
+
+        /* Sidebar */
+        .sidebar {
+            width: 250px;
+            background: #039403;
+            color: white;
+            padding: 20px;
+            height: 100vh;
+            position: fixed;
+        }
+
+        .sidebar h2 {
+            text-align: center;
+            margin-bottom: 20px;
+        }
+
+        .sidebar ul {
+            list-style: none;
+            padding: 0;
+        }
+
+        .sidebar ul li a {
+            margin: 20px 0;
+        }
+
+        .sidebar ul li a {
+            color: white;
+            text-decoration: none;
+            display: block;
+            padding: 10px;
+            transition: 0.3s;
+        }
+
+        .sidebar ul li a:hover {
+            background: #039903;
+            border-radius: 5px;
+        }
+
+        /* Main Content */
+        .main-content {
+            margin-left: 300px;
+            padding: 20px;
+            width: 100%;
+
+        }
+
+        header h1 {
+            margin-bottom: 20px;
+            color: #05c405;
+        }
+
+        p {
+            color: #05c405;
+            font-weight: bold;
+        }
+
+        
+
+        /* Spheres of Influence */
+        .spheres {
+            margin-top: 40px;
+        }
+
+        .spheres h2 {
+            color: #068b06;
+        }
+
+        .spheres ul {
+            list-style: none;
+            padding: 0;
+            display: flex;
+            flex-wrap: wrap;
+            gap: 30px;
+        }
+
+        .spheres ul li a {
+            background: linear-gradient(130deg,rgb(3, 126, 3), #048b04);    
+            color: white;
+            padding: 20px;
+            border-radius: 5px;
+            text-align: center;
+            flex: 1 1 calc(33.333% - 10px);
+            transition: background 0.3s, transform 0.3s;
+        }
+
+        .spheres ul li a:hover {
+            background: #66bb6a;
+            transform: scale(1.05);
+        }
+
+        @media (max-width: 768px) {
+            .widgets {
+                flex-direction: column;
+            }
+
+            .spheres ul li {
+                flex: 20 10 100%;
+            }
+        }
+    </style>
+</head>
+<body>
+    <div class="dashboard">
+        <nav class="sidebar">
+            <h2>GODPLEX</h2>
+            <ul>
+                <li><a href="index.html"><b>HOMEPAGE</b></a></li>
+                <li><a href="index.html"><b>ABOUT</b></a></li>
+                <li><a href="index.html"><b>SERVICES</b></a></li>
+                <li><a href="index.html"><b>WHY CHOOSE US</b></a></li>
+                
+            </ul>
+        </nav>
+        <main class="main-content">
+            <header>
+                <h1>Welcome To Dashboard</h1>
+            </header>
+                          
+               <p> Here at the GODPLEX dashboard, we give you access to well structured<br> contents, individuals and platforms that help you grow either in your personal development<br> goals or business that will enable you to become a tool for kingdom advancement<br> in every area of your influence
+                 </p> 
+           
+            <section class="spheres">
+                <h2>7 Spheres of Influence</h2>
+                <ul>
+                   <li> <a  href="religion.html">Religion</a> </li>
+                   <li> <a  href="family.html">Family</a> </li>
+                   <li> <a  href="education.html">Education</a> </li>
+                   <li> <a  href="governance.html">Governance</a> </li>
+                   <li> <a  href="media.html">Media</a> </li>
+                   <li> <a  href="art and entertainments.html">Art & Entertainment</a> </li>
+                   <li> <a  href="business.html">Business</a> </li>
+                </ul>
+            </section>
+        </main>
+    </div>
+</body>
+</html>

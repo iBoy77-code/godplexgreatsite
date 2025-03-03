@@ -1,0 +1,128 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODPLEX Content Download</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b0ffb0;
+            color: #000;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #1e1e1e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .media-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background: #ffaa00;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">KINGDOM ART AND LITIRITURE</div>
+    <div class="container">
+        <div class="media-container">
+            <embed src="PDF/Smith Wigglesworth - Smith Wigglesworth on Manifestion (1).pdf" type="application/pdf" width="100%" height="400px" style="border-radius: 10px;">
+            <div class="title">Smith Wigglesworth on Manifestion</div>
+            <div class="actions">
+                <a href="PDF/Smith Wigglesworth - Smith Wigglesworth on Manifestion (1).pdf" download class="download-btn">
+                    <i class="fa fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <img src="images/KINGDOM ART.jpg" alt="Artwork" width="100%" style="border-radius: 10px;">
+            <div class="title">Exclusive Artwork</div>
+            <div class="actions">
+                <a href="art1.jpg" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Artwork
+                </a>
+            </div>
+        </div>
+        <div class="media-container">
+            <embed src="PDF/the_purpose_driven_life_pdf.pdf" type="application/pdf" width="100%" height="400px" style="border-radius: 10px;">
+            <div class="title">The Purpose Driven Life</div>
+            <div class="actions">
+                <a href="PDF/the_purpose_driven_life_pdf.pdf" download class="download-btn">
+                    <i class="fa fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <embed src="PDF/A_Womans_Walk_with_God_Growing_in_the_Fruit_of_the_Spirit_Elizabeth (2).pdf" type="application/pdf" width="100%" height="400px" style="border-radius: 10px;">
+            <div class="title">A_Womans_Walk_with_God_Growing_in_the_Fruit_of_the_Spirit_Elizabeth</div>
+            <div class="actions">
+                <a href="PDF/A_Womans_Walk_with_God_Growing_in_the_Fruit_of_the_Spirit_Elizabeth (2).pdf" download class="download-btn">
+                    <i class="fa fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <embed src="PDF/Prayer-Banks_AncientSecretsT-UebertAngel.pdf" type="application/pdf" width="100%" height="400px" style="border-radius: 10px;">
+            <div class="title">Prayer-Banks_AncientSecretsT-UebertAngel</div>
+            <div class="actions">
+                <a href="PDF/Prayer-Banks_AncientSecretsT-UebertAngel.pdf" download class="download-btn">
+                    <i class="fa fa-download"></i> Download PDF
+                </a>
+            </div>
+        </div>
+
+    </div>
+</body>
+</html>

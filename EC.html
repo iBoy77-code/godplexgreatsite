@@ -1,0 +1,160 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>GODPLEX Media Download</title>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.2/css/all.min.css">
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            margin: 0;
+            padding: 0;
+            background-color: #b0ffb0;
+            color: #000;
+            overflow-x: hidden;
+        }
+        .navbar {
+            background: #1e1e1e;
+            color: white;
+            padding: 15px;
+            text-align: center;
+            font-size: 24px;
+            font-weight: bold;
+        }
+        .container {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            margin-top: 20px;
+            animation: fadeIn 1s ease-in-out;
+        }
+        @keyframes fadeIn {
+            from { opacity: 0; transform: translateY(-10px); }
+            to { opacity: 1; transform: translateY(0); }
+        }
+        .media-container {
+            background: #fff;
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.1);
+            width: 80%;
+            max-width: 800px;
+            margin-bottom: 20px;
+            animation: slideIn 1s ease-in-out;
+        }
+        @keyframes slideIn {
+            from { opacity: 0; transform: translateX(-20px); }
+            to { opacity: 1; transform: translateX(0); }
+        }
+        video, audio {
+            width: 100%;
+            border-radius: 10px;
+        }
+        .title {
+            font-size: 20px;
+            font-weight: bold;
+            margin-top: 10px;
+        }
+        .actions {
+            margin-top: 10px;
+        }
+        .download-btn {
+            display: inline-block;
+            padding: 10px 20px;
+            background: #ffcc00;
+            color: #000;
+            text-decoration: none;
+            font-size: 18px;
+            border-radius: 5px;
+            font-weight: bold;
+            transition: 0.3s;
+        }
+        .download-btn:hover {
+            background: #ffaa00;
+        }
+    </style>
+</head>
+<body>
+    <div class="navbar">EDUCATION CONTENTS</div>
+    <div class="container">
+        <div class="media-container">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="title">GODPLEX Exclusive Video 1</div>
+            <div class="actions">
+                <a href="video1.mp4" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Video
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="title">GODPLEX Exclusive Video 1</div>
+            <div class="actions">
+                <a href="video1.mp4" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Video
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <video controls>
+                <source src="video1.mp4" type="video/mp4">
+                Your browser does not support the video tag.
+            </video>
+            <div class="title">GODPLEX Exclusive Video 1</div>
+            <div class="actions">
+                <a href="video1.mp4" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Video
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <audio controls>
+                <source src="music1.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+            <div class="title">GODPLEX Exclusive Audio 1</div>
+            <div class="actions">
+                <a href="music1.mp3" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Audio
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <audio controls>
+                <source src="music1.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+            <div class="title">GODPLEX Exclusive Audio 1</div>
+            <div class="actions">
+                <a href="music1.mp3" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Audio
+                </a>
+            </div>
+        </div>
+
+        <div class="media-container">
+            <audio controls>
+                <source src="music1.mp3" type="audio/mp3">
+                Your browser does not support the audio tag.
+            </audio>
+            <div class="title">GODPLEX Exclusive Audio 1</div>
+            <div class="actions">
+                <a href="music1.mp3" download class="download-btn">
+                    <i class="fa fa-download"></i> Download Audio
+                </a>
+            </div>
+        </div>
+    </div>
+</body>
+</html>
