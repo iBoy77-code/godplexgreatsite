@@ -3,148 +3,181 @@
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>GODPLEX Dashboard</title>
+    <title>Godplex Dashboard</title>
+    <link rel="stylesheet" href="styles.css">
+    <script defer src="script.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
     <style>
-        /* General Styles */
+        :root {
+            --primary-color: #0f9d58;
+            --secondary-color: #ffffff;
+            --accent-color: #ffcc00;
+            --text-color: #333;
+            --bg-color: #ffffff;
+        }
+
         body {
+            background-color: var(--bg-color);
+            color: var(--text-color);
             font-family: Arial, sans-serif;
-            margin: 0;
-            padding: 0;
+            transition: background-color 0.5s, color 0.5s;
+        }
+
+        .dashboard-container {
             display: flex;
-            background-color: #eaf7ea;
-        }
-
-        /* Sidebar */
-        .sidebar {
-            width: 250px;
-            background: #039403;
-            color: white;
-            padding: 20px;
             height: 100vh;
-            position: fixed;
         }
 
-        .sidebar h2 {
-            text-align: center;
-            margin-bottom: 20px;
-        }
-
-        .sidebar ul {
-            list-style: none;
-            padding: 0;
-        }
-
-        .sidebar ul li a {
-            margin: 20px 0;
-        }
-
-        .sidebar ul li a {
+        .sidebar {
+            background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+            padding: 20px;
+            width: 250px;
             color: white;
-            text-decoration: none;
+        }
+
+        .nav-link {
             display: block;
             padding: 10px;
-            transition: 0.3s;
-        }
-
-        .sidebar ul li a:hover {
-            background: #039903;
-            border-radius: 5px;
-        }
-
-        /* Main Content */
-        .main-content {
-            margin-left: 300px;
-            padding: 20px;
-            width: 100%;
-
-        }
-
-        header h1 {
-            margin-bottom: 20px;
-            color: #05c405;
-        }
-
-        p {
-            color: #05c405;
-            font-weight: bold;
-        }
-
-        
-
-        /* Spheres of Influence */
-        .spheres {
-            margin-top: 40px;
-        }
-
-        .spheres h2 {
-            color: #068b06;
-        }
-
-        .spheres ul {
-            list-style: none;
-            padding: 0;
-            display: flex;
-            flex-wrap: wrap;
-            gap: 30px;
-        }
-
-        .spheres ul li a {
-            background: linear-gradient(130deg,rgb(3, 126, 3), #048b04);    
             color: white;
-            padding: 20px;
-            border-radius: 5px;
-            text-align: center;
-            flex: 1 1 calc(33.333% - 10px);
-            transition: background 0.3s, transform 0.3s;
+            text-decoration: none;
+            transition: background 0.3s, transform 0.2s;
         }
 
-        .spheres ul li a:hover {
-            background: #66bb6a;
+        .nav-link:hover {
+            background: var(--accent-color);
             transform: scale(1.05);
         }
 
-        @media (max-width: 768px) {
-            .widgets {
-                flex-direction: column;
-            }
+        .theme-toggle {
+            margin-top: 20px;
+            padding: 10px;
+            background: var(--primary-color);
+            color: white;
+            border: none;
+            cursor: pointer;
+            transition: transform 0.3s;
+        }
 
-            .spheres ul li {
-                flex: 20 10 100%;
-            }
+        .theme-toggle:hover {
+            transform: scale(1.1);
+        }
+
+        .card {
+            background: var(--secondary-color);
+            padding: 20px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            text-align: center;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .stats-panel {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+            gap: 20px;
+            padding: 20px;
+        }
+
+        .search-bar {
+            width: 300px;
+            padding: 12px 18px;
+            border-radius: 25px;
+            border: 2px solid var(--primary-color);
+            outline: none;
+            font-size: 16px;
+            background: white;
+            color: var(--text-color);
+            transition: box-shadow 0.3s ease-in-out;
+        }
+
+        .search-bar:focus {
+            box-shadow: 0 0 10px var(--primary-color);
+        }
+
+        .media-card img, .media-card video {
+            width: 100%;
+            border-radius: 10px;
+        }
+
+        .spheres-container {
+            display: flex;
+            flex-wrap: wrap;
+            justify-content: center;
+            gap: 15px;
+            margin: 20px;
+        }
+
+        .sphere-item {
+            background: var(--accent-color);
+            padding: 15px;
+            border-radius: 10px;
+            box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
+            transition: transform 0.3s;
+            font-weight: bold;
+            text-align: center;
+            color: var(--primary-color);
+            width: 150px;
+            text-decoration: none;
+        }
+
+        .sphere-item:hover {
+            transform: scale(1.05);
         }
     </style>
 </head>
 <body>
-    <div class="dashboard">
-        <nav class="sidebar">
-            <h2>GODPLEX</h2>
-            <ul>
-                <li><a href="index.html"><b>HOMEPAGE</b></a></li>
-                <li><a href="index.html"><b>ABOUT</b></a></li>
-                <li><a href="index.html"><b>SERVICES</b></a></li>
-                <li><a href="index.html"><b>WHY CHOOSE US</b></a></li>
-                
-            </ul>
-        </nav>
-        <main class="main-content">
-            <header>
-                <h1>Welcome To Dashboard</h1>
-            </header>
-                          
-               <p> Here at the GODPLEX dashboard, we give you access to well structured<br> contents, individuals and platforms that help you grow either in your personal development<br> goals or business that will enable you to become a tool for kingdom advancement<br> in every area of your influence
-                 </p> 
-           
-            <section class="spheres">
-                <h2>7 Spheres of Influence</h2>
+    <div class="dashboard-container">
+        <aside class="sidebar">
+            <h2 class="logo">GODPLEX</h2>
+            <nav>
                 <ul>
-                   <li> <a  href="religion.html">Religion</a> </li>
-                   <li> <a  href="family.html">Family</a> </li>
-                   <li> <a  href="education.html">Education</a> </li>
-                   <li> <a  href="governance.html">Governance</a> </li>
-                   <li> <a  href="media.html">Media</a> </li>
-                   <li> <a  href="art and entertainments.html">Art & Entertainment</a> </li>
-                   <li> <a  href="business.html">Business</a> </li>
+                    <li><a href="index.html" class="nav-link">Homepage</a></li>
+                    <li><a href="about.html" class="nav-link">About</a></li>
+                    <li><a href="service.html" class="nav-link">Services</a></li>
+                    <li><a href="team.html" class="nav-link">Team</a></li>
+                    <li><a href="signup.html" class="nav-link">Signup</a></li>
                 </ul>
+            </nav>
+            <button class="theme-toggle">🌙 Toggle Mode</button>
+        </aside>
+
+        <main class="main-content">
+            <header class="navbar">
+                <h2>Welcome, User</h2>
+                <p class="quote">"With God, all things are possible."</p>
+                <input type="text" placeholder="Search..." class="search-bar">
+            </header>
+            
+            <section class="spheres-container">
+                <a href="religion.html" class="sphere-item">Religion</a>
+                <a href="family.html" class="sphere-item">Family</a>
+                <a href="education.html" class="sphere-item">Education</a>
+                <a href="governance.html" class="sphere-item">Governance</a>
+                <a href="media.html" class="sphere-item">Media</a>
+                <a href="art and entertainments.html" class="sphere-item">Art & Entertainment</a>
+                <a href="business.html" class="sphere-item">Business</a>
+            </section>
+            
+            <section class="stats-panel">
+                <div class="card media-card">
+                    <h3>Religion platform</h3>
+                    <img src="images/Pcrew.jpg" alt="Active Users">
+                </div>
+                <div class="card media-card">
+                    <h3>Engagement Rate</h3>
+                    <video controls>
+                        <source src="engagement.mp4" type="video/mp4">
+                        Your browser does not support the video tag.
+                    </video>
+                </div>
+                <div class="card media-card">
+                    <h3>Religion platform</h3>
+                    <img src="images/prayer unit.jpg" alt="Recent Activity">
+                </div>
             </section>
         </main>
     </div>
